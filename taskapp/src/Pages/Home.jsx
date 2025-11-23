@@ -10,6 +10,7 @@ import Loader from "../components/Loader";
 import { FaUndo } from "react-icons/fa";
 import { TbCircleDotFilled } from "react-icons/tb";
 import TodoSkeleton from "../components/TodoSkeleton"
+import BackgroundImage from "../../public/bgimageWinday.png"
 
 const categories = [
   { id: 1, type: "all" },
@@ -235,7 +236,11 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" style={{
+      backgroundImage:`url(${BackgroundImage})`,
+      backgroundSize:"cover",
+      position:"center"
+    }}>
       <div className="flex justify-center w-[70%] lg:w-[30%] gap-3 mt-4  flex-wrap md:flex-nowrap">
         {categories.map((eachtask) => (
           <div
@@ -315,7 +320,7 @@ const Home = () => {
             </div>
           ) : (
             // view Task Button 
-            <div className="flex items-center justify-center shadow-md w-full md:w-[30%]  bg-red-200 p-3 rounded-md">
+            <div className="flex items-center justify-center shadow-md w-full lg:w-[30%]  bg-red-200 p-3 rounded-md">
               <div className="flex flex-col items-start justify-start p-1 gap-4 w-fit m-3">
                 <p className="text-xs">Your today's task almost done!</p>
                 <button
@@ -363,7 +368,7 @@ const Home = () => {
           <TodoSkeleton/>
           </div>
         ) : (
-          <div className="flex flex-col gap-4 w-full md:w-[50%]  items-center justify-start  p-2 m-2 h-[60vh] overflow-y-scroll">
+          <div className="flex flex-col gap-4 w-full lg:w-[50%]  items-center justify-start  p-2 m-2 h-[60vh] overflow-y-scroll">
             <div className="w-full items-center justify-center p-1 text-white text-center font-semibold border border-1 border-red-400 bg-red-700 rounded-md ">
             <p>PENDING TODO'S</p>
           </div>
@@ -389,7 +394,7 @@ const Home = () => {
                         />
                         <div className="w-full">
                           <div className="w-full flex items-center justify-between gap-2">
-                            <h1 className="text-xs md:text-[14px] font-semibold capitalize mb-2">
+                            <h1 className="text-[14px] md:text-[14px] font-semibold capitalize mb-2">
                              <span>{index+1}.</span> {eachTodo.title}
                             </h1>
                             
@@ -454,7 +459,7 @@ const Home = () => {
             )}
           </div>
         )}
-        <div className="flex flex-col w-full md:w-[20%] items-start justify-center">
+        <div className="flex flex-col w-full lg:w-[20%] items-start justify-center">
           <div className="w-full items-center justify-center p-1 text-white text-center font-semibold border border-1 border-red-400 bg-red-700 rounded-md ">
             <p>ADD TODO</p>
           </div>
