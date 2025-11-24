@@ -4,6 +4,7 @@ import { SlCalender } from "react-icons/sl";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { GiPodiumWinner } from "react-icons/gi";
+import HeaderImage from "../../public/headerbgimage.jpg"
 
 const Header = () => {
   const [date, setDate] = useState(new Date());
@@ -30,7 +31,11 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col border-b-1 shadow-md border-gray-300">
+    <div className="flex flex-col border-b-1 border-red-500 shadow-lg border-gray-300" style={{
+      backgroundImage:`url(${HeaderImage})`,
+      backgroundSize:"cover",
+      position:"end"
+    }}>
       <div className="w-full flex justify-between items-center px-5 md:px-20 py-3 pt-8 ">
         {/* Logo */}
         <div className="flex flex-col items-start md:items-center justify-center">
@@ -40,7 +45,7 @@ const Header = () => {
             WINDAY
           </h1>
         </div>
-          <p className="text-[7px] md:text-[12px] text-gray-500 italic">
+          <p className="text-[10px] md:text-[12px] text-gray-500 italic">
             All in one app for task management
           </p>
         </div>
