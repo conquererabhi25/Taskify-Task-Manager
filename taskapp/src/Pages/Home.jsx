@@ -237,7 +237,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-fit  lg:h-[100vh]" style={{
+    <div className="flex flex-col items-center h-fit  lg:h-[90vh]" style={{
       backgroundImage:`url(${BackgroundImage})`,
       backgroundSize:"cover",
       position:"center"
