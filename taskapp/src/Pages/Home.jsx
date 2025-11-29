@@ -261,6 +261,7 @@ const Home = () => {
       {/* Horizontal container for todo and create todo and status */}
       <div className="flex flex-col lg:flex-row items-start justify-between w-full p-10 gap-4">
         {/* Status Bar */}
+        {loading? (<h1 className="text-sm ">Kindly wait , we're establishaing connection with database</h1>):(null)}
         <>
           {completedTaskStatus ? (
             <div className="h-[60vh] overflow-y-scroll p-2 w-full lg:w-[30%] ">
@@ -369,7 +370,7 @@ const Home = () => {
           <TodoSkeleton/>
           </div>
         ) : (
-          <div className="flex flex-col gap-4 w-full lg:w-[50%]  items-center justify-start  p-2 m-2 h-fit overflow-y-scroll">
+          <div className="flex flex-col gap-4 w-full lg:w-[50%]  items-center justify-start  p-2 m-2 h-[70vh] lg:h-[60vh] overflow-y-scroll">
             <div className="w-full items-center justify-center p-1 text-white text-center font-semibold border border-1 border-red-400 bg-red-700 rounded-md ">
             <p>PENDING TODO'S</p>
           </div>
