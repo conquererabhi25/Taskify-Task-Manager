@@ -52,11 +52,13 @@ const Home = () => {
 
   const fetchServerData = () => {
     setLoader(true);
+    setLoading(true)
     axios
       .get("https://taskifyservernew-1.onrender.com/api/todos")
       .then((response) => {
         setTodoData(response.data);
         setLoader(false);
+         setLoading(false)
       })
       .catch(() => console.log("Error Fetching Data"));
   };
@@ -159,6 +161,7 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    
 
     const payload = {
       ...formData,
@@ -236,6 +239,9 @@ const Home = () => {
     }
   };
 
+
+  console.log("Loading State:", loading);
+
   return (
     <div className="flex flex-col items-center h-fit  lg:h-[90vh]" style={{
       backgroundImage:`url(${BackgroundImage})`,
@@ -258,10 +264,11 @@ const Home = () => {
           </div>
         ))}
       </div>
+      {loading && <h1 className="mt-3 font-semibold italic text-red-500">Connecting To Database Kindly Wait.......</h1>}
       {/* Horizontal container for todo and create todo and status */}
       <div className="flex flex-col lg:flex-row items-start justify-between w-full p-10 gap-4">
         {/* Status Bar */}
-        {loading? (<h1 className="text-sm ">Kindly wait , we're establishaing connection with database</h1>):(null)}
+      
         <>
           {completedTaskStatus ? (
             <div className="h-[60vh] overflow-y-scroll p-2 w-full lg:w-[30%] ">
