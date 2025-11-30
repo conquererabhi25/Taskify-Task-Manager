@@ -264,7 +264,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      {loading && <h1 className="mt-3 font-semibold italic text-red-500">Connecting To Database Kindly Wait.......</h1>}
+      {loading && <h1 className="mt-3 text-xs italic text-red-500">Connecting To Database Kindly Wait.......</h1>}
       {/* Horizontal container for todo and create todo and status */}
       <div className="flex flex-col lg:flex-row items-start justify-between w-full p-10 gap-4">
         {/* Status Bar */}
